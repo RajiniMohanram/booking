@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="java.util.*, com.prodapt.proj.travel.customer.*"%>
+    pageEncoding="ISO-8859-1"%>
+
+<%@ page import="com.prodapt.proj.travel.customer.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,11 +13,11 @@
 <body>
 	<a href="add-customer.jsp">Add More Customers</a>
 	<h1>All Customers</h1>
-	<% 
-		List<Customer> customers = (List<Customer>) request.getAttribute("customers");
-		for(Customer c : customers) {
-	%>
-		<%= c.getId() %> - <%= c.getUsername() %> - <%= c.getCity() %> <br/>
-	<% } %>
+
+	<c:forEach var="cust" items="${customers}">
+		<div>
+			${cust.id } - ${cust.username } - ${cust.city}
+		</div>
+	</c:forEach>
 </body>
 </html>

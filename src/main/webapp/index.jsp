@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+
+<%@ page import="java.util.*" %>    
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +12,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>Hello User, Select your option...</h2>
-	<a href="add-customer.jsp">Add Customer</a>
+	<c:forEach var="n" items="Bubble, Butter Cup, Kevin, Thomas, Bob">
+		<h3> ${n} </h3>
+	</c:forEach>
 </body>
 </html>
